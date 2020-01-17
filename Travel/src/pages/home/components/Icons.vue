@@ -24,7 +24,7 @@ export default {
       swiperOption: {
         autoplay: false
       }
-    }  
+    }
   },
   computed: {
     pages () {
