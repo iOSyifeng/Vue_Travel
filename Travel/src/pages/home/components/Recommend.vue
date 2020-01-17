@@ -2,7 +2,7 @@
   <div>
       <div class="title">热销推荐</div>
       <ul>
-          <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+          <li class="item border-bottom" v-for="item of list" :key="item.id">
               <img class="item-img" :src="item.imgUrl" />
               <div class="item-info">
                   <p class="item-title">{{item.title}}</p>
@@ -17,25 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201309/25/70edd368471094bdc8d65eac.jpg_200x200_75b6f391.jpg',
-        title: '临安湍口众安氡温泉',
-        desc: '临安湍口众安氡温泉临安湍口众安氡温泉'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201309/25/70edd368471094bdc8d65eac.jpg_200x200_75b6f391.jpg',
-        title: '临安湍口众安氡温泉',
-        desc: '临安湍口众安氡温泉临安湍口众安氡温泉'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201309/25/70edd368471094bdc8d65eac.jpg_200x200_75b6f391.jpg',
-        title: '临安湍口众安氡温泉',
-        desc: '临安湍口众安氡温泉临安湍口众安氡温泉'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

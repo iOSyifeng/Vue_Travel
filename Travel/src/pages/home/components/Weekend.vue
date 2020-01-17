@@ -2,7 +2,7 @@
   <div>
       <div class="title">周末去哪儿</div>
       <ul>
-          <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+          <li class="item border-bottom" v-for="item of list" :key="item.id">
               <div class="item-img-wrapper">
                 <img class="item-img" :src="item.imgUrl" />
               </div>
@@ -18,25 +18,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201309/25/70edd368471094bdc8d65eac.jpg_200x200_75b6f391.jpg',
-        title: '临安湍口众安氡温泉',
-        desc: '临安湍口众安氡温泉临安湍口众安氡温泉'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201309/25/70edd368471094bdc8d65eac.jpg_200x200_75b6f391.jpg',
-        title: '临安湍口众安氡温泉',
-        desc: '临安湍口众安氡温泉临安湍口众安氡温泉'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201309/25/70edd368471094bdc8d65eac.jpg_200x200_75b6f391.jpg',
-        title: '临安湍口众安氡温泉',
-        desc: '临安湍口众安氡温泉临安湍口众安氡温泉'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -44,14 +27,13 @@ export default {
 <style lang="stylus" scoped>
     @import '~styles/mixins.styl'
     .title
-        marigin-top: .2rem
         line-height: .8rem
         background: #eee
         text-indent: .2rem
     .item-img-wrapper
         overflow: hidden
         height: 0
-        padding-bottom: 33.9%
+        padding-bottom: 37.09%
         .item-img
             width: 100%
     .item-info
