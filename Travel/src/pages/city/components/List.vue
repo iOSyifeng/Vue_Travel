@@ -25,7 +25,10 @@
             <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
                 <div class="title border-topbottom">{{key}}</div>
                 <div class="item-list">
-                    <div class="item border-bottom" v-for="innerItem of item" :key="innerItem.id">
+                    <div class="item border-bottom"
+                    v-for="innerItem of item"
+                    :key="innerItem.id"
+                    @click="handleCityClick(innerItem.name)">
                         {{innerItem.name}}
                     </div>
                 </div>
@@ -45,9 +48,9 @@ export default {
   },
   methods: {
     handleCityClick (city) {
-    //   print(123)
     //   this.$store.dispatch('changeCity', city)
-      alert(city)
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
     }
   },
   watch: {
@@ -58,8 +61,10 @@ export default {
       }
     }
   },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+  beforeUpdate () {
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click: true
+    })
   }
 }
 </script>
